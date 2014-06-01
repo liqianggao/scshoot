@@ -9,7 +9,7 @@ Screencasts are saved in animated APNG format with 500ms interval (2 fps).
 Right-click - opens popup menu:
 
 *  __Save to...__ - select destination rirectory
-*  __Select bounds...__ - select capture rectangle bounds (right mouse - drag rectangle, left mouse - select rectangle, ESC - exit)
+*  __Select bounds...__ - select capture rectangle bounds (left mouse - drag rectangle, right mouse - select rectangle, ESC - exit)
 *  __Full screen__ - capture full screen instead of rectangle
 *  __Shot...__ - make screenshot
 *  __Start capture APNG...__ - start capture of animated PNG with 500ms frame intervals
