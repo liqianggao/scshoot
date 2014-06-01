@@ -27,14 +27,14 @@ dist:
 	- cp -R -L $(DIR_RES) $(DIR_DIST)/
 	- cp -R -L $(DIR_TOOLS)/*.sh $(DIR_DIST)/
 	- cp -R -L $(DIR_TOOLS)/*.bat $(DIR_DIST)/
-	cd $(DIR_BIN) && $(JAVA_HOME)/../bin/jar -cf ../$(DIR_DIST)/$(PROJECT).jar .
+	- cd $(DIR_BIN) && $(JAVA_HOME)/../bin/jar -cf ../$(DIR_DIST)/$(PROJECT).jar .
 
 release: dist
-	rm -rf $(DIR_RELEASE)/*
-	mkdir $(DIR_RELEASE)/$(PROJECT)
-	cp -R -L $(DIR_DIST)/* $(DIR_RELEASE)/$(PROJECT)
-	cd $(DIR_RELEASE); zip -r $(PROJECT)_`date +%Y.%m.%d-%H.%M`.zip $(PROJECT)
-	rm -rf $(DIR_RELEASE)/$(PROJECT)
+	#rm -rf $(DIR_RELEASE)/*
+	- mkdir $(DIR_RELEASE)/$(PROJECT)
+	- cp -R -L $(DIR_DIST)/* $(DIR_RELEASE)/$(PROJECT)
+	- cd $(DIR_RELEASE); zip -r $(PROJECT)-`date +%Y.%m.%d-%H.%M.%S`.zip $(PROJECT)
+	- rm -rf $(DIR_RELEASE)/$(PROJECT)
 	
 repo: dist
 	- cd $(DIR_REPO) && rm -rf *
