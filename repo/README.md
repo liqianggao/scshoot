@@ -9,11 +9,11 @@ Screencasts are saved in animated APNG format with 500ms interval (2 fps).
 Right-click - opens popup menu:
 
 *  __Save to...__ - select destination rirectory
-*  Select bounds... - select capture rectangle bounds
-*  Full screen - capture full screen instead of rectangle
-*  Shot... - make screenshot
-*  Start capture APNG... - start capture of animated PNG with 500ms frame intervals
-*  Stop capture... - stop capture
-*  Exit - close program
+*  __Select bounds...__ - select capture rectangle bounds
+*  __Full screen__ - capture full screen instead of rectangle
+*  __Shot...__ - make screenshot
+*  __Start capture APNG...__ - start capture of animated PNG with 500ms frame intervals
+*  __Stop capture...__ - stop capture
+*  __Exit__ - close program
 
 For operation needs Java 8.
