@@ -6,7 +6,7 @@ Cross-platform screenshot and screen capture tool.
 Screenshots are saved in destination directory, named by current date/time.  
 Screencasts are saved in animated APNG format with 500ms interval (2 fps).  
 
-Right-click - opens popup menu:
+__Right-click__ - opens popup menu:
 
 *  __Save to...__ - select destination rirectory
 *  __Select bounds...__ - select capture rectangle bounds (left mouse - drag rectangle, right mouse - select rectangle, ESC - exit)
@@ -16,4 +16,5 @@ Right-click - opens popup menu:
 *  __Stop capture...__ - stop capture
 *  __Exit__ - close program
 
-For operation needs Java 8.
+For operation needs __Java 8__ .  
+Installation - get binary release from __release__ section, unpack, and launch __scshoot.bat__ or __scshoot.sh__ depending on OS.
