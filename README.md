@@ -1,10 +1,11 @@
 scshoot
 =======
 
-Cross-platform screenshot and screen capture tool.  
+Cross-platform screenshot and screen capture tool  
 
-Screenshots are saved in destination directory, named by current date/time.  
-Screencasts are saved in animated APNG format with 500ms interval (2 fps).  
+Screenshots are saved in destination directory, named by current date/time  
+Screencasts are saved in animated APNG format with 500ms interval (2 fps)  
+APNG format encoded by Reto Hoehener's [Japng library](http://www.reto-hoehener.ch/japng/)  
 
 __Right-click__ - opens popup menu:
 
