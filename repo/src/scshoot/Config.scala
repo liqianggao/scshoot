@@ -17,7 +17,7 @@ object Config extends ul.Props {
     val localeDir  = projectDir + "locale"
 
     val cssDir     = projectDir + "css" + java.io.File.separator
-    val cssFile    = "file:" + cssDir + project + ".css"
+    val cssFile    = "file:///" + (cssDir + project + ".css").replaceAll("\\\\", "/")
     
     val scriptsDir = projectDir + "scripts" + java.io.File.separator
     
@@ -40,6 +40,12 @@ object Config extends ul.Props {
     @BeanProperty var shotH    = 100
     @BeanProperty var shotFullScreen = false
 
+    @BeanProperty var apngRate   = 2
+
+    @BeanProperty var videoAudio = false
+    @BeanProperty var videoRate  = 5
+    @BeanProperty var ffmpegLocation = ""
+
     props.attrs ++= List(
         new ul.PropAttr("x")
         ,new ul.PropAttr("y")
@@ -53,6 +59,12 @@ object Config extends ul.Props {
         ,new ul.PropAttr("shotW")
         ,new ul.PropAttr("shotH")
         ,new ul.PropAttr("shotFullScreen")
+
+        ,new ul.PropAttr("apngRate")
+
+        ,new ul.PropAttr("videoAudio")
+        ,new ul.PropAttr("videoRate")
+        ,new ul.PropAttr("ffmpegLocation")
     )
     
     def save = {

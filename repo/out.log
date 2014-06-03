@@ -1,0 +1,20 @@
+p11-kit: invalid config filename, will be ignored in the future: /etc/pkcs11/modules/gnome-keyring-module.dpkg-bak
+avconv version 10.1-6:10.1-1, Copyright (c) 2000-2014 the Libav developers
+  built on May 11 2014 17:27:13 with gcc 4.8 (Debian 4.8.2-21)
+[x11grab @ 0x85d65a0] device: :0.0+104,150 -> display: :0.0 x: 104 y: 150 width: 451 height: 447
+[x11grab @ 0x85d65a0] shared memory extension  found
+[x11grab @ 0x85d65a0] Estimating duration from bitrate, this may be inaccurate
+Input #0, x11grab, from ':0.0+104,150':
+  Duration: N/A, start: 1401814160.652869, bitrate: 32255 kb/s
+    Stream #0.0: Video: rawvideo, bgra, 451x447, 32255 kb/s, 1000k tbn, 5 tbc
+[ffv1 @ 0x85e2220] Storing alpha plane, this will require a recent FFV1 decoder to playback!
+Output #0, matroska, to '/home/qwer/work/projects/scala/scshoot/img/2014.06.03-19.49.16.mkv':
+  Metadata:
+    encoder         : Lavf55.12.0
+    Stream #0.0: Video: ffv1, bgra, 451x447, q=2-31, 200 kb/s, 1k tbn, 5 tbc
+Stream mapping:
+  Stream #0:0 -> #0:0 (rawvideo -> ffv1)
+Press ctrl-c to stop encoding
+frame=    4 fps=  0 q=0.0 size=      69kB time=0.80 bitrate= 705.9kbits/s    frame=    7 fps=  6 q=0.0 size=     132kB time=1.40 bitrate= 770.0kbits/s    frame=   10 fps=  6 q=0.0 size=     215kB time=2.00 bitrate= 878.8kbits/s    frame=   13 fps=  5 q=0.0 size=     311kB time=2.60 bitrate= 978.6kbits/s    frame=   16 fps=  5 q=0.0 size=     390kB time=3.20 bitrate= 998.6kbits/s    frame=   19 fps=  5 q=0.0 size=     469kB time=3.80 bitrate=1011.3kbits/s    frame=   22 fps=  5 q=0.0 size=     559kB time=4.40 bitrate=1040.1kbits/s    frame=   25 fps=  5 q=0.0 size=     642kB time=5.00 bitrate=1051.2kbits/s    frame=   28 fps=  5 q=0.0 size=     724kB time=5.60 bitrate=1059.3kbits/s    frame=   31 fps=  5 q=0.0 size=     809kB time=6.20 bitrate=1068.4kbits/s    frame=   34 fps=  5 q=0.0 size=     900kB time=6.80 bitrate=1084.4kbits/s    frame=   37 fps=  5 q=0.0 size=     996kB time=7.40 bitrate=1102.7kbits/s    frame=   40 fps=  5 q=0.0 size=    1090kB time=8.00 bitrate=1116.5kbits/s    frame=   43 fps=  5 q=0.0 size=    1211kB time=8.60 bitrate=1154.0kbits/s    frame=   46 fps=  5 q=0.0 size=    1322kB time=9.20 bitrate=1177.1kbits/s    frame=   49 fps=  5 q=0.0 size=    1418kB time=9.80 bitrate=1185.7kbits/s    frame=   51 fps=  5 q=0.0 size=    1481kB time=10.20 bitrate=1189.5kbits/s    frame=   54 fps=  5 q=0.0 size=    1575kB time=10.80 bitrate=1194.4kbits/s    frame=   57 fps=  5 q=0.0 size=    1668kB time=11.40 bitrate=1198.7kbits/s    frame=   60 fps=  5 q=0.0 size=    1761kB time=12.00 bitrate=1202.5kbits/s    frame=   61 fps=  5 q=0.0 Lsize=    1795kB time=12.20 bitrate=1205.2kbits/s    
+video:0kB audio:0kB global headers:0kB muxing overhead 0.000000%
+Received signal 15: terminating.

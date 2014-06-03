@@ -55,7 +55,7 @@ commit: repo
 	- git add $(DIR_DIST)
 	- git add LICENSE
 	- git add README.md
-	- git commit -m $(MSG)
+	- git commit -m "$(MSG)"
 
 push:
 	- git push -u origin master

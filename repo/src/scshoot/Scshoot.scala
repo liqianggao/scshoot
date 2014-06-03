@@ -36,32 +36,6 @@ class Scshoot extends javafx.application.Application with ul.GetTextable {
         stg.show()
     }
 
-//        if (java.awt.SystemTray.isSupported) {
-//            val toolkit   = awt.Toolkit.getDefaultToolkit
-//            val tray      = awt.SystemTray.getSystemTray
-//            val traySize  = tray.getTrayIconSize
-//            val trayImage = toolkit.getImage(Config.resDir + "tray.png").getScaledInstance(traySize.width, traySize.height, awt.Image.SCALE_SMOOTH)
-//            
-//            val trayIcon = new java.awt.TrayIcon(trayImage, "Scshoot"){
-//                addMouseListener( new java.awt.event.MouseAdapter {
-//                    override def mouseClicked( e:java.awt.event.MouseEvent ) {
-//                        println("OOOK")
-//                        if (e.getButton == java.awt.event.MouseEvent.BUTTON1) {
-//                        }
-//                    }
-//                })
-//                
-////                addActionListener( new awt.event.ActionListener {
-////                    override def actionPerformed(e:awt.event.ActionEvent) {
-////                        println(333)
-////                    }
-////                })
-//            }
-//            
-//            tray.add( trayIcon )
-//        }
-//    }
-//    
     override def stop() {
         Config.x = Config.primaryStage.getX
         Config.y = Config.primaryStage.getY
