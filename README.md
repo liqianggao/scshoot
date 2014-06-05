@@ -8,7 +8,7 @@ Screenshots are saved in destination directory, named by current date/time
 Screencasts are saved in animated APNG format with 500ms interval (2 fps)  
 APNG format encoded by Reto Hoehener's [Japng library](http://www.reto-hoehener.ch/japng/)  
 
-Video captured at 5fps, in Linux by __avconv__ , in Windows by [__ffmpeg__](http://ffmpeg.zeranoe.com/builds/) with [UScreenCapture](http://www.videohelp.com/tools/UScreenCapture) filter.  
+Video captured at 5fps, in Linux by __avconv__ , in Windows by [__ffmpeg__](http://ffmpeg.zeranoe.com/builds/) with [UScreenCapture](http://www.videohelp.com/tools/UScreenCapture) and [Virtual Audio Cable](http://vb-audio.pagesperso-orange.fr/Cable/index.htm) filters.  
 
 
 __Right-click__ - opens popup menu:
