@@ -1,20 +1,343 @@
 p11-kit: invalid config filename, will be ignored in the future: /etc/pkcs11/modules/gnome-keyring-module.dpkg-bak
 avconv version 10.1-6:10.1-1, Copyright (c) 2000-2014 the Libav developers
   built on May 11 2014 17:27:13 with gcc 4.8 (Debian 4.8.2-21)
-[x11grab @ 0x85d65a0] device: :0.0+104,150 -> display: :0.0 x: 104 y: 150 width: 451 height: 447
-[x11grab @ 0x85d65a0] shared memory extension  found
-[x11grab @ 0x85d65a0] Estimating duration from bitrate, this may be inaccurate
-Input #0, x11grab, from ':0.0+104,150':
-  Duration: N/A, start: 1401814160.652869, bitrate: 32255 kb/s
-    Stream #0.0: Video: rawvideo, bgra, 451x447, 32255 kb/s, 1000k tbn, 5 tbc
-[ffv1 @ 0x85e2220] Storing alpha plane, this will require a recent FFV1 decoder to playback!
-Output #0, matroska, to '/home/qwer/work/projects/scala/scshoot/img/2014.06.03-19.49.16.mkv':
+[alsa @ 0x9208040] capture with some ALSA plugins, especially dsnoop, may hang.
+[alsa @ 0x9208040] Estimating duration from bitrate, this may be inaccurate
+Guessed Channel Layout for  Input Stream #0.0 : stereo
+Input #0, alsa, from 'pulse':
+  Duration: N/A, start: 1401959213.994281, bitrate: N/A
+    Stream #0.0: Audio: pcm_s16le, 22050 Hz, stereo, s16, 705 kb/s
+[x11grab @ 0x9216460] device: :0.0+304,181 -> display: :0.0 x: 304 y: 181 width: 466 height: 363
+[x11grab @ 0x9216460] shared memory extension  found
+[x11grab @ 0x9216460] Estimating duration from bitrate, this may be inaccurate
+Input #1, x11grab, from ':0.0+304,181':
+  Duration: N/A, start: 1401959214.559397, bitrate: 27065 kb/s
+    Stream #1.0: Video: rawvideo, bgra, 466x363, 27065 kb/s, 1000k tbn, 5 tbc
+[ffv1 @ 0x9221940] Storing alpha plane, this will require a recent FFV1 decoder to playback!
+Output #0, matroska, to '/home/qwer/work/projects/scala/scshoot/img/2014.06.05-12.06.53.mkv':
   Metadata:
     encoder         : Lavf55.12.0
-    Stream #0.0: Video: ffv1, bgra, 451x447, q=2-31, 200 kb/s, 1k tbn, 5 tbc
+    Stream #0.0: Video: ffv1, bgra, 466x363, q=2-31, 200 kb/s, 1k tbn, 5 tbc
+    Stream #0.1: Audio: libvorbis, 22050 Hz, stereo, fltp
 Stream mapping:
-  Stream #0:0 -> #0:0 (rawvideo -> ffv1)
+  Stream #1:0 -> #0:0 (rawvideo -> ffv1)
+  Stream #0:0 -> #0:1 (pcm_s16le -> libvorbis)
 Press ctrl-c to stop encoding
-frame=    4 fps=  0 q=0.0 size=      69kB time=0.80 bitrate= 705.9kbits/s    frame=    7 fps=  6 q=0.0 size=     132kB time=1.40 bitrate= 770.0kbits/s    frame=   10 fps=  6 q=0.0 size=     215kB time=2.00 bitrate= 878.8kbits/s    frame=   13 fps=  5 q=0.0 size=     311kB time=2.60 bitrate= 978.6kbits/s    frame=   16 fps=  5 q=0.0 size=     390kB time=3.20 bitrate= 998.6kbits/s    frame=   19 fps=  5 q=0.0 size=     469kB time=3.80 bitrate=1011.3kbits/s    frame=   22 fps=  5 q=0.0 size=     559kB time=4.40 bitrate=1040.1kbits/s    frame=   25 fps=  5 q=0.0 size=     642kB time=5.00 bitrate=1051.2kbits/s    frame=   28 fps=  5 q=0.0 size=     724kB time=5.60 bitrate=1059.3kbits/s    frame=   31 fps=  5 q=0.0 size=     809kB time=6.20 bitrate=1068.4kbits/s    frame=   34 fps=  5 q=0.0 size=     900kB time=6.80 bitrate=1084.4kbits/s    frame=   37 fps=  5 q=0.0 size=     996kB time=7.40 bitrate=1102.7kbits/s    frame=   40 fps=  5 q=0.0 size=    1090kB time=8.00 bitrate=1116.5kbits/s    frame=   43 fps=  5 q=0.0 size=    1211kB time=8.60 bitrate=1154.0kbits/s    frame=   46 fps=  5 q=0.0 size=    1322kB time=9.20 bitrate=1177.1kbits/s    frame=   49 fps=  5 q=0.0 size=    1418kB time=9.80 bitrate=1185.7kbits/s    frame=   51 fps=  5 q=0.0 size=    1481kB time=10.20 bitrate=1189.5kbits/s    frame=   54 fps=  5 q=0.0 size=    1575kB time=10.80 bitrate=1194.4kbits/s    frame=   57 fps=  5 q=0.0 size=    1668kB time=11.40 bitrate=1198.7kbits/s    frame=   60 fps=  5 q=0.0 size=    1761kB time=12.00 bitrate=1202.5kbits/s    frame=   61 fps=  5 q=0.0 Lsize=    1795kB time=12.20 bitrate=1205.2kbits/s    
-video:0kB audio:0kB global headers:0kB muxing overhead 0.000000%
+Non-monotonous DTS in output stream 0:1; previous: -253, current: -298; changing to -252. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: -252, current: -280; changing to -251. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: -251, current: -265; changing to -250. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: -5, current: -9; changing to -4. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: -4, current: -20; changing to -3. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 0, current: -2; changing to 1. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 1, current: -3; changing to 2. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 2, current: -5; changing to 3. This may result in incorrect timestamps in the output file.
+frame=    3 fps=  0 q=0.0 size=      47kB time=0.01 bitrate=38543.2kbits/s    Non-monotonous DTS in output stream 0:1; previous: 3, current: -7; changing to 4. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 4, current: 3; changing to 5. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 5, current: 1; changing to 6. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 6, current: -20; changing to 7. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 1001, current: 997; changing to 1002. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 1002, current: 998; changing to 1003. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 1003, current: 961; changing to 1004. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 1004, current: 980; changing to 1005. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 1005, current: 999; changing to 1006. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 1006, current: 994; changing to 1007. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 1007, current: 996; changing to 1008. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 1008, current: 945; changing to 1009. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 1009, current: 883; changing to 1010. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 1010, current: 907; changing to 1011. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 1011, current: 926; changing to 1012. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 1012, current: 945; changing to 1013. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 1013, current: 968; changing to 1014. This may result in incorrect timestamps in the output file.
+frame=    6 fps=  6 q=0.0 size=     228kB time=1.02 bitrate=1840.4kbits/s    Non-monotonous DTS in output stream 0:1; previous: 1014, current: 987; changing to 1015. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 1015, current: 998; changing to 1016. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 1016, current: 997; changing to 1017. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 1017, current: 969; changing to 1018. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 1018, current: 866; changing to 1019. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 1019, current: 881; changing to 1020. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 1020, current: 900; changing to 1021. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 1021, current: 919; changing to 1022. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 1022, current: 934; changing to 1023. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 1023, current: 949; changing to 1024. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 1024, current: 964; changing to 1025. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 1025, current: 983; changing to 1026. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 1026, current: 1002; changing to 1027. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 1027, current: 997; changing to 1028. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 1028, current: 994; changing to 1029. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 1029, current: 1001; changing to 1030. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 1030, current: 978; changing to 1031. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 1031, current: 998; changing to 1032. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 1032, current: 988; changing to 1033. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 1033, current: 994; changing to 1034. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 1034, current: 996; changing to 1035. This may result in incorrect timestamps in the output file.
+frame=    8 fps=  5 q=0.0 size=     234kB time=1.04 bitrate=1846.1kbits/s    Non-monotonous DTS in output stream 0:1; previous: 1035, current: 1003; changing to 1036. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 1036, current: 1001; changing to 1037. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 1037, current: 992; changing to 1038. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 2001, current: 2000; changing to 2002. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 2003, current: 1949; changing to 2004. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 2004, current: 1972; changing to 2005. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 2005, current: 1991; changing to 2006. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 2006, current: 2002; changing to 2007. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 2007, current: 1999; changing to 2008. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 2008, current: 1998; changing to 2009. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 2009, current: 1997; changing to 2010. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 2010, current: 2003; changing to 2011. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 2011, current: 1985; changing to 2012. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 2012, current: 1921; changing to 2013. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 2013, current: 1945; changing to 2014. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 2014, current: 1960; changing to 2015. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 2015, current: 1979; changing to 2016. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 2016, current: 1998; changing to 2017. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 2017, current: 2000; changing to 2018. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 2018, current: 1990; changing to 2019. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 2019, current: 1866; changing to 2020. This may result in incorrect timestamps in the output file.
+frame=   11 fps=  5 q=0.0 size=     414kB time=2.02 bitrate=1676.9kbits/s    Non-monotonous DTS in output stream 0:1; previous: 2020, current: 1885; changing to 2021. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 2021, current: 1900; changing to 2022. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 2022, current: 1919; changing to 2023. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 2023, current: 1938; changing to 2024. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 2024, current: 1957; changing to 2025. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 2025, current: 1977; changing to 2026. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 2026, current: 1990; changing to 2027. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 2027, current: 2002; changing to 2028. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 2028, current: 1980; changing to 2029. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 2029, current: 1980; changing to 2030. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 2030, current: 1987; changing to 2031. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 2031, current: 1995; changing to 2032. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 2032, current: 1994; changing to 2033. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 2033, current: 1993; changing to 2034. This may result in incorrect timestamps in the output file.
+frame=   13 fps=  5 q=0.0 size=     419kB time=2.04 bitrate=1686.0kbits/s    Non-monotonous DTS in output stream 0:1; previous: 2034, current: 1993; changing to 2035. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 2035, current: 1958; changing to 2036. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 2036, current: 1899; changing to 2037. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 2037, current: 1839; changing to 2038. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 2956, current: 2938; changing to 2957. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 2957, current: 2906; changing to 2958. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 2958, current: 2925; changing to 2959. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 2959, current: 2949; changing to 2960. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 2996, current: 2995; changing to 2997. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 3000, current: 2962; changing to 3001. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 3001, current: 2862; changing to 3002. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 3002, current: 2881; changing to 3003. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 3003, current: 2904; changing to 3004. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 3004, current: 2923; changing to 3005. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 3005, current: 2943; changing to 3006. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 3006, current: 2966; changing to 3007. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 3007, current: 2985; changing to 3008. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 3008, current: 2996; changing to 3009. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 3009, current: 2945; changing to 3010. This may result in incorrect timestamps in the output file.
+frame=   16 fps=  5 q=0.0 size=     606kB time=3.01 bitrate=1648.2kbits/s    Non-monotonous DTS in output stream 0:1; previous: 3010, current: 2880; changing to 3011. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 3011, current: 2904; changing to 3012. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 3012, current: 2915; changing to 3013. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 3013, current: 2938; changing to 3014. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 3014, current: 2961; changing to 3015. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 3015, current: 2972; changing to 3016. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 3016, current: 2984; changing to 3017. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 3017, current: 2994; changing to 3018. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 3018, current: 2993; changing to 3019. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 3019, current: 2992; changing to 3020. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 3020, current: 2977; changing to 3021. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 3021, current: 2928; changing to 3022. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 3022, current: 2951; changing to 3023. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 3023, current: 2962; changing to 3024. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 3024, current: 2986; changing to 3025. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 3025, current: 2997; changing to 3026. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 3026, current: 2959; changing to 3027. This may result in incorrect timestamps in the output file.
+frame=   18 fps=  5 q=0.0 size=     611kB time=3.03 bitrate=1650.6kbits/s    Non-monotonous DTS in output stream 0:1; previous: 3027, current: 2970; changing to 3028. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 3028, current: 2981; changing to 3029. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 3029, current: 2993; changing to 3030. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 3999, current: 3923; changing to 4000. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 4000, current: 3946; changing to 4001. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 4001, current: 3970; changing to 4002. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 4002, current: 3993; changing to 4003. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 4003, current: 3992; changing to 4004. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 4004, current: 3991; changing to 4005. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 4005, current: 3990; changing to 4006. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 4006, current: 3868; changing to 4007. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 4007, current: 3891; changing to 4008. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 4008, current: 3914; changing to 4009. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 4009, current: 3937; changing to 4010. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 4010, current: 3961; changing to 4011. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 4011, current: 3972; changing to 4012. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 4012, current: 3995; changing to 4013. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 4013, current: 3993; changing to 4014. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 4014, current: 3992; changing to 4015. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 4015, current: 3944; changing to 4016. This may result in incorrect timestamps in the output file.
+frame=   21 fps=  5 q=0.0 size=     791kB time=4.02 bitrate=1612.2kbits/s    Non-monotonous DTS in output stream 0:1; previous: 4016, current: 3880; changing to 4017. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 4017, current: 3891; changing to 4018. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 4018, current: 3914; changing to 4019. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 4019, current: 3937; changing to 4020. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 4020, current: 3949; changing to 4021. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 4021, current: 3972; changing to 4022. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 4022, current: 3983; changing to 4023. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 4023, current: 3994; changing to 4024. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 4024, current: 3993; changing to 4025. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 4025, current: 3992; changing to 4026. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 4026, current: 3991; changing to 4027. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 4027, current: 3975; changing to 4028. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 4028, current: 3950; changing to 4029. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 4029, current: 3961; changing to 4030. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 4030, current: 3984; changing to 4031. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 4031, current: 3995; changing to 4032. This may result in incorrect timestamps in the output file.
+frame=   24 fps=  5 q=0.0 size=     796kB time=4.04 bitrate=1616.1kbits/s    Non-monotonous DTS in output stream 0:1; previous: 4032, current: 3969; changing to 4033. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 4033, current: 3993; changing to 4034. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 4034, current: 3992; changing to 4035. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 4999, current: 4986; changing to 5000. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 5000, current: 4900; changing to 5001. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 5001, current: 4912; changing to 5002. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 5002, current: 4935; changing to 5003. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 5003, current: 4958; changing to 5004. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 5004, current: 4981; changing to 5005. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 5005, current: 4992; changing to 5006. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 5006, current: 4991; changing to 5007. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 5007, current: 5002; changing to 5008. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 5008, current: 4953; changing to 5009. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 5009, current: 4903; changing to 5010. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 5010, current: 4914; changing to 5011. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 5011, current: 4937; changing to 5012. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 5012, current: 4948; changing to 5013. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 5013, current: 4972; changing to 5014. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 5014, current: 4995; changing to 5015. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 5015, current: 4994; changing to 5016. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 5016, current: 4993; changing to 5017. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 5017, current: 4846; changing to 5018. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 5018, current: 4870; changing to 5019. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 5019, current: 4881; changing to 5020. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 5020, current: 4904; changing to 5021. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 5021, current: 4927; changing to 5022. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 5022, current: 4935; changing to 5023. This may result in incorrect timestamps in the output file.
+frame=   26 fps=  5 q=0.0 size=     980kB time=5.03 bitrate=1597.4kbits/s    Non-monotonous DTS in output stream 0:1; previous: 5023, current: 4958; changing to 5024. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 5024, current: 4970; changing to 5025. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 5025, current: 4993; changing to 5026. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 5026, current: 4992; changing to 5027. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 5027, current: 5003; changing to 5028. This may result in incorrect timestamps in the output file.
+frame=   29 fps=  5 q=0.0 size=     984kB time=5.03 bitrate=1603.4kbits/s    Non-monotonous DTS in output stream 0:1; previous: 5028, current: 4990; changing to 5029. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 5029, current: 4976; changing to 5030. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 5030, current: 4912; changing to 5031. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 5031, current: 4849; changing to 5032. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 5946, current: 5896; changing to 5947. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 5947, current: 5920; changing to 5948. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 5948, current: 5931; changing to 5949. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 6000, current: 5999; changing to 6001. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 6001, current: 5998; changing to 6002. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 6002, current: 5961; changing to 6003. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 6003, current: 5814; changing to 6004. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 6004, current: 5837; changing to 6005. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 6005, current: 5861; changing to 6006. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 6006, current: 5872; changing to 6007. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 6007, current: 5895; changing to 6008. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 6008, current: 5906; changing to 6009. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 6009, current: 5929; changing to 6010. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 6010, current: 5953; changing to 6011. This may result in incorrect timestamps in the output file.
+frame=   31 fps=  5 q=0.0 size=    1167kB time=6.01 bitrate=1589.7kbits/s    Non-monotonous DTS in output stream 0:1; previous: 6011, current: 5976; changing to 6012. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 6012, current: 5999; changing to 6013. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 6013, current: 5986; changing to 6014. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 6014, current: 5728; changing to 6015. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 6015, current: 5743; changing to 6016. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 6016, current: 5758; changing to 6017. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 6017, current: 5765; changing to 6018. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 6018, current: 5772; changing to 6019. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 6019, current: 5779; changing to 6020. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 6020, current: 5795; changing to 6021. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 6021, current: 5810; changing to 6022. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 6022, current: 5817; changing to 6023. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 6023, current: 5832; changing to 6024. This may result in incorrect timestamps in the output file.
+frame=   34 fps=  5 q=0.0 size=    1171kB time=6.03 bitrate=1591.5kbits/s    Non-monotonous DTS in output stream 0:1; previous: 6024, current: 5839; changing to 6025. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 6025, current: 5854; changing to 6026. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 6026, current: 5869; changing to 6027. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 6932, current: 6880; changing to 6933. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 6933, current: 6903; changing to 6934. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 6934, current: 6927; changing to 6935. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 6995, current: 6994; changing to 6996. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 6996, current: 6977; changing to 6997. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 6997, current: 6855; changing to 6998. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 6998, current: 6879; changing to 6999. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 6999, current: 6894; changing to 7000. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 7000, current: 6917; changing to 7001. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 7001, current: 6940; changing to 7002. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 7002, current: 6955; changing to 7003. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 7003, current: 6979; changing to 7004. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 7004, current: 6994; changing to 7005. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 7005, current: 6976; changing to 7006. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 7006, current: 6871; changing to 7007. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 7007, current: 6886; changing to 7008. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 7008, current: 6901; changing to 7009. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 7009, current: 6925; changing to 7010. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 7010, current: 6940; changing to 7011. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 7011, current: 6939; changing to 7012. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 7012, current: 6940; changing to 7013. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 7013, current: 6943; changing to 7014. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 7014, current: 6931; changing to 7015. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 7015, current: 6943; changing to 7016. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 7016, current: 6936; changing to 7017. This may result in incorrect timestamps in the output file.
+frame=   36 fps=  5 q=0.0 size=    1354kB time=7.02 bitrate=1579.6kbits/s    Non-monotonous DTS in output stream 0:1; previous: 7017, current: 6951; changing to 7018. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 7018, current: 6958; changing to 7019. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 7019, current: 6964; changing to 7020. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 7020, current: 6948; changing to 7021. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 7021, current: 6959; changing to 7022. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 7022, current: 6952; changing to 7023. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 7023, current: 6964; changing to 7024. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 7024, current: 6963; changing to 7025. This may result in incorrect timestamps in the output file.
+frame=   39 fps=  5 q=0.0 size=    1358kB time=7.03 bitrate=1582.5kbits/s    Non-monotonous DTS in output stream 0:1; previous: 7025, current: 6986; changing to 7026. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 7026, current: 6993; changing to 7027. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 7027, current: 7000; changing to 7028. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 7958, current: 7664; changing to 7959. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 7959, current: 7688; changing to 7960. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 7960, current: 7703; changing to 7961. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 7961, current: 7718; changing to 7962. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 7962, current: 7741; changing to 7963. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 7963, current: 7756; changing to 7964. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 7964, current: 7771; changing to 7965. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 7965, current: 7787; changing to 7966. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 7966, current: 7810; changing to 7967. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 7967, current: 7833; changing to 7968. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 7968, current: 7661; changing to 7969. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 7969, current: 7668; changing to 7970. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 7970, current: 7667; changing to 7971. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 7971, current: 7682; changing to 7972. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 7972, current: 7689; changing to 7973. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 7973, current: 7704; changing to 7974. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 7974, current: 7720; changing to 7975. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 7975, current: 7735; changing to 7976. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 7976, current: 7750; changing to 7977. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 7977, current: 7765; changing to 7978. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 7978, current: 7780; changing to 7979. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 7979, current: 7787; changing to 7980. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 7980, current: 7802; changing to 7981. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 7981, current: 7817; changing to 7982. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 7982, current: 7823; changing to 7983. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 7983, current: 7838; changing to 7984. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 7984, current: 7853; changing to 7985. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 7985, current: 7868; changing to 7986. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 7986, current: 7883; changing to 7987. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 7987, current: 7890; changing to 7988. This may result in incorrect timestamps in the output file.
+frame=   40 fps=  5 q=0.0 size=    1505kB time=7.99 bitrate=1543.3kbits/s    Non-monotonous DTS in output stream 0:1; previous: 7988, current: 7896; changing to 7989. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 7989, current: 7912; changing to 7990. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 7990, current: 7910; changing to 7991. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 7991, current: 7918; changing to 7992. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 7992, current: 7917; changing to 7993. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 7993, current: 7916; changing to 7994. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 7994, current: 7923; changing to 7995. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 7995, current: 7938; changing to 7996. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 7996, current: 7942; changing to 7997. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 7997, current: 7949; changing to 7998. This may result in incorrect timestamps in the output file.
+frame=   44 fps=  5 q=0.0 size=    1512kB time=8.00 bitrate=1547.9kbits/s    Non-monotonous DTS in output stream 0:1; previous: 7998, current: 7972; changing to 7999. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 7999, current: 7979; changing to 8000. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 8000, current: 7986; changing to 8001. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 8750, current: 8642; changing to 8751. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 8751, current: 8657; changing to 8752. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 8752, current: 8672; changing to 8753. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 8753, current: 8679; changing to 8754. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 8754, current: 8694; changing to 8755. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 8755, current: 8701; changing to 8756. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 8756, current: 8708; changing to 8757. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 8757, current: 8731; changing to 8758. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 8758, current: 8738; changing to 8759. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 8759, current: 8737; changing to 8760. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 8760, current: 8744; changing to 8761. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 8761, current: 8735; changing to 8762. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 8762, current: 8750; changing to 8763. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 8763, current: 8757; changing to 8764. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 8787, current: 8778; changing to 8788. This may result in incorrect timestamps in the output file.
+Non-monotonous DTS in output stream 0:1; previous: 8788, current: 8785; changing to 8789. This may result in incorrect timestamps in the output file.
+frame=   45 fps=  5 q=0.0 size=    1695kB time=8.82 bitrate=1574.1kbits/s    Non-monotonous DTS in output stream 0:1; previous: 8852, current: 8845; changing to 8853. This may result in incorrect timestamps in the output file.
+frame=   48 fps=  5 q=0.0 Lsize=    1806kB time=8.96 bitrate=1650.2kbits/s    
+video:0kB audio:0kB global headers:4kB muxing overhead 51064.527344%
 Received signal 15: terminating.

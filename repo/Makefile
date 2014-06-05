@@ -25,8 +25,7 @@ dist:
 	- cp -R -L $(DIR_SCRIPTS) $(DIR_DIST)/
 	- cp -R -L $(DIR_CSS) $(DIR_DIST)/
 	- cp -R -L $(DIR_RES) $(DIR_DIST)/
-	- cp -R -L $(DIR_TOOLS)/*.sh $(DIR_DIST)/
-	- cp -R -L $(DIR_TOOLS)/*.bat $(DIR_DIST)/
+	- cp -R -L $(DIR_TOOLS)/* $(DIR_DIST)/
 	- cd $(DIR_BIN) && $(JAVA_HOME)/../bin/jar -cf ../$(DIR_DIST)/$(PROJECT).jar .
 
 release: dist

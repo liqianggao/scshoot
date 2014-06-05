@@ -65,16 +65,22 @@ class MainStage extends javafx.scene.layout.StackPane with ul.GetTextable {
                 
                 def processCmd(r:java.awt.Rectangle, vrate:Int, audio:Boolean, fn:String):List[String] = {
                     System.getProperty("os.name").toLowerCase match {
-                        case s:String if (s.startsWith("linux") && !audio) =>
-                            List("avconv","-f","x11grab","-r","%d".format(vrate),"-s","%dx%d".format(r.width,r.height),"-i",":0.0+%d,%d".format(r.x,r.y), "-vcodec","ffv1", "-coder","ac", "-threads","0", "%s".format(fn))
-                        case s:String if (s.startsWith("win") && !audio) =>
-                            List(Config.ffmpegLocation + "\\ffmpeg.exe","-f","dshow","-r","%d".format(vrate), "-i","video=UScreenCapture", "-vcodec","ffv1", "-coder","ac", "-filter:v","crop=%d:%d:%d:%d".format(r.width,r.height,r.x,r.y), "%s".format(fn))
+                        case s:String if (s.startsWith("linux")) =>
+                            List("avconv") :::
+                            (if (!audio) Nil else List("-f","alsa","-ac","2", "-ab","32k", "-ar","22050", "-i","pulse", "-acodec","vorbis")) :::
+                            List("-f","x11grab","-r","%d".format(vrate),"-s","%dx%d".format(r.width,r.height),"-i",":0.0+%d,%d".format(r.x,r.y), "-vcodec","ffv1", "-coder","ac", "-threads","0", "-y", "%s".format(fn))
+                        case s:String if (s.startsWith("win")) =>
+                            List(Config.ffmpegLocation + "\\ffmpeg.exe") :::
+                            (if (!audio) Nil else List("-f","dshow", "-i","audio=VB-Audio Point")) :::
+                            List("-f","dshow","-r","%d".format(vrate), "-i","video=UScreenCapture", "-vcodec","ffv1", "-coder","ac", "-filter:v","crop=%d:%d:%d:%d".format(r.width,r.height,r.x,r.y)) :::
+                            (if (!audio) Nil else List("-strict","-2", "-acodec","vorbis", "-ac","2", "-ab","32k", "-ar","22050")) :::
+                            List("-y", "%s".format(fn))
                     }
                 }
                 var process:java.lang.Process = null
             }
         }
-
+//avconv -f x11grab -r 5 -s 451x447 -i :0.0+675,468 -vcodec ffv1 -coder ac -threads 1 -y /home/qwer/work/projects/scala/scshoot/img/2014.06.05-08.45.55.mkv
         //application popup menu...
         val contextMenu:javafx.scene.control.ContextMenu = new javafx.scene.control.ContextMenu {
             val _contextMenu = this
@@ -272,38 +278,6 @@ class MainStage extends javafx.scene.layout.StackPane with ul.GetTextable {
                 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                 ,new javafx.scene.control.SeparatorMenuItem
 
-                //capture audio or not ? ...
-                ,new javafx.scene.control.CheckMenuItem(tr("Capture audio")){
-                    val _mi = this
-                    shot.capture.menuDisable += this
-
-                    setSelected(Config.videoAudio)
-                    setOnAction(new javafx.event.EventHandler[javafx.event.ActionEvent]{
-                        override def handle(e:javafx.event.ActionEvent) = {
-                            Config.videoAudio = _mi.isSelected
-                        }
-                    })
-                }
-                //ffmpeg directory selection...
-                ,new javafx.scene.control.MenuItem(tr("FFmpeg binary location... ") + Config.ffmpegLocation){
-                    val _mi = this
-                    shot.capture.menuDisable += this
-
-                    val _locDir = new javafx.stage.DirectoryChooser
-                    _locDir.setInitialDirectory( new java.io.File( Config.saveTo ))
-                    _locDir.setTitle( tr("FFmpeg directory...") )
-
-                    setOnAction(new javafx.event.EventHandler[javafx.event.ActionEvent]{
-                        override def handle(e:javafx.event.ActionEvent) = {
-                            _locDir.showDialog(_node.getScene.getWindow) match {
-                                case null =>
-                                case f:java.io.File =>
-                                    Config.ffmpegLocation = f.toString
-                                    _mi.setText(tr("FFmpeg location... ") + Config.ffmpegLocation)
-                            }
-                        }
-                    })
-                }
                 //start avconv capture
                 ,new javafx.scene.control.MenuItem(tr("Start capture video...")){
                     val _mi = this
@@ -364,6 +338,38 @@ class MainStage extends javafx.scene.layout.StackPane with ul.GetTextable {
                                     Config.primaryStage.toFront
                                 }
                             })
+                        }
+                    })
+                }
+                //capture audio or not ? ...
+                ,new javafx.scene.control.CheckMenuItem(tr("Capture audio")){
+                    val _mi = this
+                    shot.capture.menuDisable += this
+
+                    setSelected(Config.videoAudio)
+                    setOnAction(new javafx.event.EventHandler[javafx.event.ActionEvent]{
+                        override def handle(e:javafx.event.ActionEvent) = {
+                            Config.videoAudio = _mi.isSelected
+                        }
+                    })
+                }
+                //ffmpeg directory selection...
+                ,new javafx.scene.control.MenuItem(tr("FFmpeg binary location... ") + Config.ffmpegLocation){
+                    val _mi = this
+                    shot.capture.menuDisable += this
+
+                    val _locDir = new javafx.stage.DirectoryChooser
+                    _locDir.setInitialDirectory( new java.io.File( Config.saveTo ))
+                    _locDir.setTitle( tr("FFmpeg directory...") )
+
+                    setOnAction(new javafx.event.EventHandler[javafx.event.ActionEvent]{
+                        override def handle(e:javafx.event.ActionEvent) = {
+                            _locDir.showDialog(_node.getScene.getWindow) match {
+                                case null =>
+                                case f:java.io.File =>
+                                    Config.ffmpegLocation = f.toString
+                                    _mi.setText(tr("FFmpeg location... ") + Config.ffmpegLocation)
+                            }
                         }
                     })
                 }
