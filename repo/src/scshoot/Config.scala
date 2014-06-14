@@ -40,7 +40,11 @@ object Config extends ul.Props {
     @BeanProperty var shotH    = 100
     @BeanProperty var shotFullScreen = false
 
+    var apngFirst:java.awt.image.BufferedImage = null
+    val apngFrameDelay = 500
+    val apngLoopDelay  = 4000
     @BeanProperty var apngRate   = 2
+    @BeanProperty var apngLoop   = false
 
     @BeanProperty var videoAudio = false
     @BeanProperty var videoRate  = 5
@@ -61,6 +65,7 @@ object Config extends ul.Props {
         ,new ul.PropAttr("shotFullScreen")
 
         ,new ul.PropAttr("apngRate")
+        ,new ul.PropAttr("apngLoop")
 
         ,new ul.PropAttr("videoAudio")
         ,new ul.PropAttr("videoRate")

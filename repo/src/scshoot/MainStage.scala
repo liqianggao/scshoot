@@ -112,7 +112,7 @@ class MainStage extends javafx.scene.layout.StackPane with ul.GetTextable {
                 ,new javafx.scene.control.SeparatorMenuItem
 
                 //capture rectangle selection...
-                ,new javafx.scene.control.MenuItem(tr("Bounds (Right-drag, Left-select, ESC - exit)...")){
+                ,new javafx.scene.control.MenuItem(tr("Bounds (Left-drag, Right-select, ESC - exit)...")){
                     val _mi = this
                     shot.capture.menuDisable += this
 
@@ -170,7 +170,7 @@ class MainStage extends javafx.scene.layout.StackPane with ul.GetTextable {
 
                     setOnAction(new javafx.event.EventHandler[javafx.event.ActionEvent]{
                         override def handle(e:javafx.event.ActionEvent) = {
-                            println("shot...")
+//                            println("shot...")
                             javafx.application.Platform.runLater( new java.lang.Runnable {
                                 def run = {
                                     //hide menu and application window
@@ -208,13 +208,15 @@ class MainStage extends javafx.scene.layout.StackPane with ul.GetTextable {
                 ,new javafx.scene.control.SeparatorMenuItem
 
                 //start APNG capture
-                ,new javafx.scene.control.MenuItem(tr("Start capture APNG...")){
+                ,new javafx.scene.control.MenuItem(tr("Capture APNG...")){
                     val _mi = this
                     shot.capture.menuDisable += this
 
                     setOnAction(new javafx.event.EventHandler[javafx.event.ActionEvent]{
                         override def handle(e:javafx.event.ActionEvent) = {
-                            println("capture start...")
+//                            println("capture start...")
+                            Config.apngFirst = null
+                            
                             javafx.application.Platform.runLater( new java.lang.Runnable {
                                 def run = {
                                     //hide menu and application window
@@ -225,7 +227,9 @@ class MainStage extends javafx.scene.layout.StackPane with ul.GetTextable {
                                     Config.primaryStage.toBack
                                     
                                     shot.capture.apng = ch.reto_hoehener.japng.ApngFactory.createApng
-                                    shot.capture.apng.setPlayCount(1)
+                                    shot.capture.apng.setPlayCount(
+                                        if (Config.apngLoop) 0 else 1
+                                    )
                                     shot.capture.apng.setSkipFirstFrame(false)
                                         
                                     shot.capture.file = shot.curFile(".apng")
@@ -234,22 +238,24 @@ class MainStage extends javafx.scene.layout.StackPane with ul.GetTextable {
                                     shot.capture.timer = new java.util.Timer
                                     shot.capture.timer.scheduleAtFixedRate(new java.util.TimerTask {
                                         def run = {
-                                            shot.capture.apng.addFrame(shot.robot.createScreenCapture(shot.rect), 1000)
+                                            val img = shot.robot.createScreenCapture(shot.rect)
+                                            if (Config.apngFirst == null) Config.apngFirst = img
+                                            shot.capture.apng.addFrame(img, Config.apngFrameDelay)
                                         }
-                                    }, 100, 1000 / Config.apngRate)
+                                    }, 100, Config.apngFrameDelay)
                                 }
                             })
                         }
                     })
                 }
                 //stop APNG capture
-                ,new javafx.scene.control.MenuItem(tr("Stop capture...")){
+                ,new javafx.scene.control.MenuItem(tr("Stop")){
                     shot.capture.menuEnable += this
                     setDisable(true)
 
                     setOnAction(new javafx.event.EventHandler[javafx.event.ActionEvent]{
                         override def handle(e:javafx.event.ActionEvent) = {
-                            println("capture stop...")
+//                            println("capture stop...")
                             javafx.application.Platform.runLater( new java.lang.Runnable {
                                 def run = {
                                     //stop timer and finalize APNG
@@ -257,6 +263,9 @@ class MainStage extends javafx.scene.layout.StackPane with ul.GetTextable {
                                     
                                     (new java.util.Timer).schedule(new java.util.TimerTask{
                                         def run = {
+                                            if (Config.apngLoop && (Config.apngFirst != null)){
+                                                shot.capture.apng.addFrame(Config.apngFirst, Config.apngLoopDelay)
+                                            }
                                             shot.capture.apng.assemble(shot.capture.file)
                                         }
                                     }, 100)
@@ -272,6 +281,18 @@ class MainStage extends javafx.scene.layout.StackPane with ul.GetTextable {
                         }
                     })
                 }
+                //loop APNG ? ...
+                ,new javafx.scene.control.CheckMenuItem(tr("Loop")){
+                    val _mi = this
+                    shot.capture.menuDisable += this
+
+                    setSelected(Config.apngLoop)
+                    setOnAction(new javafx.event.EventHandler[javafx.event.ActionEvent]{
+                        override def handle(e:javafx.event.ActionEvent) = {
+                            Config.apngLoop = _mi.isSelected
+                        }
+                    })
+                }
 
                 
                 
@@ -279,13 +300,13 @@ class MainStage extends javafx.scene.layout.StackPane with ul.GetTextable {
                 ,new javafx.scene.control.SeparatorMenuItem
 
                 //start avconv capture
-                ,new javafx.scene.control.MenuItem(tr("Start capture video...")){
+                ,new javafx.scene.control.MenuItem(tr("Capture video...")){
                     val _mi = this
                     shot.capture.menuDisable += this
 
                     setOnAction(new javafx.event.EventHandler[javafx.event.ActionEvent]{
                         override def handle(e:javafx.event.ActionEvent) = {
-                            println("video capture start...")
+//                            println("video capture start...")
                             javafx.application.Platform.runLater( new java.lang.Runnable {
                                 def run = {
                                     //hide menu and application window
@@ -311,13 +332,13 @@ class MainStage extends javafx.scene.layout.StackPane with ul.GetTextable {
                     })
                 }
                 //stop video capture
-                ,new javafx.scene.control.MenuItem(tr("Stop capture video...")){
+                ,new javafx.scene.control.MenuItem(tr("Stop")){
                     shot.video.menuEnable += this
                     setDisable(true)
 
                     setOnAction(new javafx.event.EventHandler[javafx.event.ActionEvent]{
                         override def handle(e:javafx.event.ActionEvent) = {
-                            println("capture video stop...")
+//                            println("capture video stop...")
                             javafx.application.Platform.runLater( new java.lang.Runnable {
                                 def run = {
                                     
@@ -342,7 +363,7 @@ class MainStage extends javafx.scene.layout.StackPane with ul.GetTextable {
                     })
                 }
                 //capture audio or not ? ...
-                ,new javafx.scene.control.CheckMenuItem(tr("Capture audio")){
+                ,new javafx.scene.control.CheckMenuItem(tr("Audio")){
                     val _mi = this
                     shot.capture.menuDisable += this
 

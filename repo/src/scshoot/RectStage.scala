@@ -30,6 +30,7 @@ class RectStage extends javafx.stage.Stage with ul.GetTextable {
         var (fromX, fromY, toX, toY) = (0.0,0.0,0.0,0.0)
         var cursor = javafx.scene.Cursor.DEFAULT
     }
+
     addEventHandler(javafx.scene.input.MouseEvent.MOUSE_PRESSED, new javafx.event.EventHandler[javafx.scene.input.MouseEvent]{
         def handle(e:javafx.scene.input.MouseEvent){
             if (e.getButton == javafx.scene.input.MouseButton.PRIMARY){
@@ -45,7 +46,7 @@ class RectStage extends javafx.stage.Stage with ul.GetTextable {
                         drag.cursor = rectStage.getScene.getCursor
                         rectStage.getScene.setCursor(javafx.scene.Cursor.MOVE)
 
-                        println("drag started at " + drag.x + "," + drag.y)
+//                        println("drag started at " + drag.x + "," + drag.y)
                     }
                 }
                 e.consume
@@ -59,7 +60,7 @@ class RectStage extends javafx.stage.Stage with ul.GetTextable {
                     select.cursor = rectStage.getScene.getCursor
                     rectStage.getScene.setCursor(javafx.scene.Cursor.CROSSHAIR)
 
-                    println("selection started at " + select.fromX + "," + select.fromY)
+//                    println("selection started at " + select.fromX + "," + select.fromY)
                 }
                 e.consume
             }
@@ -71,10 +72,21 @@ class RectStage extends javafx.stage.Stage with ul.GetTextable {
                 if (drag.started){
                     val dx = e.getScreenX - drag.x
                     val dy = e.getScreenY - drag.y
-                    selRect.setX( drag.rectX + dx)
-                    selRect.setY( drag.rectY + dy)
-                    Config.shotX = (drag.x + dx).toInt
-                    Config.shotY = (drag.y + dy).toInt
+                    
+                    var x = drag.rectX + dx
+                    if (x < 0) x = 0
+                    if (x + selRect.getWidth >= Config.screenSize.getWidth)
+                        x = Config.screenSize.getWidth - selRect.getWidth
+                    
+                    var y = drag.rectY + dy
+                    if (y < 0) y = 0
+                    if (y + selRect.getHeight >= Config.screenSize.getHeight)
+                        y = Config.screenSize.getHeight - selRect.getHeight
+                    
+                    selRect.setX( x )
+                    selRect.setY( y )
+                    Config.shotX = x.toInt //(drag.x + dx).toInt
+                    Config.shotY = y.toInt //(drag.y + dy).toInt
                 }
                 e.consume
             }
